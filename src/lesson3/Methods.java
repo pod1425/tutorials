@@ -15,7 +15,6 @@ public class Methods {
      * @return sum of those two numbers
      */
     public static int sum(int a, int b) {
-        int lol = 1 / 0;
         return a + b;
     }
 
