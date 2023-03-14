@@ -1,65 +1,45 @@
 package lesson_oop;
 
-class Human {
-    String name;
-    int age;
-    double height;
-
-    Human() {
-        name = "";
-        age = 0;
-        height = 0;
-    }
-
-    Human(String name, int age, double height) {
-        this.name = name;
-        this.age = age;
-        this.height = height;
-    }
-
-    public String toString(){
-        return "Name: " + this.name + ", age: "
-                + this.age + ", height: " + this.height;
-    }
-}
-
-class Rectangle {
-    double length;
-    double height;
-
-    Rectangle() {
-        height = 0;
-        length = 0;
-    }
-
-    Rectangle(double length, double height) {
-        this.length = length;
-        this.height = height;
-    }
-
-    double getPerimeter() {
-        return 2 * (length + height);
-    }
-
-    double getSquare() {
-        return length * height;
-    }
-
-    double getDiagonal() {
-        return Math.sqrt(length * length + height * height);
-    }
-
-    public String toString() {
-        return "Length = " + this.length + " Height = " + this.height;
-    }
-}
+import java.util.Scanner;
 
 public class Test {
-    public static void main(String[] args) {
-        Rectangle rect = new Rectangle(4, 3);
-        System.out.println(rect);
-        System.out.println(rect.getPerimeter());
-        System.out.println(rect.getSquare());
-        System.out.println(rect.getDiagonal());
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        double weight = inputWeight(scanner);
+        double height = inputHeight(scanner);
+        double BMI = calculateBMI(weight, height);
+        printResult(BMI);
+    }
+
+    private static double inputWeight(Scanner scanner) {
+        System.out.print("Введіть вагу у кг: ");
+        return scanner.nextDouble();
+    }
+
+    private static double inputHeight(Scanner scanner) {
+        System.out.print("Введіть зріст у см: ");
+        return scanner.nextDouble() / 100;
+    }
+
+    private static double calculateBMI(double weight, double heigt) {
+        return weight / square(heigt);
+    }
+
+    private static double square(double value) {
+        return value * value;
+    }
+
+    private static void printResult(double BMI) {
+        System.out.println("\nВаш ІМТ: " + BMI);
+        System.out.println("Результат:");
+        if (BMI < 18.5) {
+            System.out.println("Недостатня вага");
+        } else if (BMI < 25) {
+            System.out.println("Нормальна вага");
+        } else if (BMI < 30) {
+            System.out.println("Надмірна вага");
+        } else {
+            System.out.println("Ожиріння");
+        }
     }
 }
