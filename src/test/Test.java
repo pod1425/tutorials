@@ -1,25 +1,31 @@
 package test;
 
 public class Test {
-    public static void main(String[] args) {
-        int a = 12;
-        System.out.println("integer number, example: " + a + ", 4 bytes");
-        byte b = 126;
-        System.out.println("we do have b days" + "byte -1");
-        short c = 32555;
-        System.out.println(c + " " + "bytes -2");
-        long d = 4777777777L;
-        System.out.println(d + " " + "bytes -8");
-        float e = 2;
-        System.out.println(e + " " + "bytes -4");
-        double f = 6.18;
-        System.out.println(f + " " + "bytes -8");
 
-        char j = 97;
-        System.out.println(j);
-        System.out.println((a * b) + (c * e));
-        System.out.println("ce nevydymyi ryadok \n");
-        String str = "Have a good day";
-        System.out.println(str);
+    public static double calcMedian(int[] arr) {
+        double sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        int amount = arr.length;
+        return sum / amount;
+    }
+
+    public static int findMinimal(int[] arr) {
+        int min = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 8, -6, 34, 12};
+        double mid = calcMedian(arr);
+        int minimalValue = findMinimal(arr);
+        System.out.println("Mediana: " + mid);
+        System.out.println("Minimal value: " + minimalValue);
     }
 }
