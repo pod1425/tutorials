@@ -9,10 +9,10 @@ public class ConsoleInput {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Welcome to calculator! Enter two numbers >");
-        int num1 = sc.nextInt();
-        int num2 = sc.nextInt();
-        System.out.println("Sum of two numbers = " + sum(num1, num2));
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Input a number> ");
+        int num = scanner.nextInt();
+        System.out.println("You entered number " + num);
+        System.out.println(sum(num, num));
     }
 }
