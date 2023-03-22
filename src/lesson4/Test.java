@@ -19,28 +19,6 @@ class Point {
     }
 }
 
-class Human {
-    double weight;
-    int height;
-    String name;
-
-    Human() {
-        this.weight = -1;
-        this.height = 0;
-        this.name = "NULL";
-    }
-
-    Human(String name, int height, double weight) {
-        this.weight = weight;
-        this.height = height;
-        this.name = name;
-    }
-
-    void talk() {
-        System.out.println(this.name + " says: Hello!");
-    }
-}
-
 public class Test {
     public static void main(String[] args) {
         Point p1 = new Point(1, 2);
