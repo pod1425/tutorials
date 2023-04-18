@@ -30,9 +30,11 @@ public class Demo {
         Homework homework = new Homework(student);
         System.out.println(homework.text);
          */
+
         int turns = 5;
         Machinery machinery = new Machinery(turns);
         Part part = new Part("Engine", turns);
+
         machinery.assemblePart(part);
         System.out.println(part.state);
     }

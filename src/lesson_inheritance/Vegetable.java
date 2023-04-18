@@ -16,6 +16,7 @@ public class Vegetable extends Product {
         this.dateOfExpire = dateOfExpire;
     }
 
+    @Override
     public String toString() {
         return super.toString()
                 + ", date of expire: " + this.dateOfExpire;
