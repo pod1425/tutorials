@@ -1,6 +1,6 @@
 package lesson_polymorphism;
 
-public class Lion extends Animal implements Talkable {
+public class Lion extends Animal {
     public Lion(String name) {
         super(name);
     }

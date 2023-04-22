@@ -1,16 +1,16 @@
-package hw.bank;
+package hw.bank.card;
 
 import java.util.Scanner;
 
 public class Card {
-    private final int CVC2;
-    private final String number;
-    private double balance;
-    private String cardholderName;
-    private String expirationdate;
-    private int pinCode;
+    protected final int CVC2;
+    protected final String number;
+    protected double balance;
+    protected String cardholderName;
+    protected String expirationdate;
+    protected int pinCode;
 
-    public Card(String number, int CVC2, double balance, String cardholderName, String expirationdate, int pinCode) {
+    protected Card(String number, int CVC2, double balance, String cardholderName, String expirationdate, int pinCode) {
         this.CVC2 = CVC2;
         this.balance = balance;
         this.number = number;
@@ -23,13 +23,14 @@ public class Card {
         this.pinCode = pinCode;
     }
 
-    public double getBalance() {
-        return balance;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public String getNumber() {
         return number;
     }
+
 
     public String getCardholderName() {
         return cardholderName;
@@ -42,6 +43,7 @@ public class Card {
     public String getExpirationdate() {
         return expirationdate;
     }
+
 
     public void deposit(double amount) {
         if (amount > 5000) {
