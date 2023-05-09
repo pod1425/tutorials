@@ -57,18 +57,21 @@ public class Card {
     }
 
     public void withdraw(double amount) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please enter your PIN code: ");
-        int userPinCode = scanner.nextInt();
-        if (userPinCode != pinCode) {
-            System.out.println("Invalid PIN code.");
-            return;
-        }
         if (this.balance < amount) {
             System.out.println("Insufficient funds.");
         } else {
             this.balance -= amount;
         }
+    }
 
+    public boolean pinCode() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter your PIN code: ");
+        int userPinCode = scanner.nextInt();
+        if (userPinCode != pinCode) {
+            System.out.println("Invalid PIN code.");
+            return false;
+        }
+        return true;
     }
 }
