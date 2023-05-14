@@ -21,6 +21,10 @@ public class CreditCard extends Card {
         }
     }
 
+    public void setDebt(double debt) {
+        this.debt = debt;
+    }
+
     public double getDebt() {
         return debt;
     }
@@ -34,6 +38,7 @@ public class CreditCard extends Card {
             return;
         }
         this.limit = limit;
+
     }
 
     public void credit(double amount) {

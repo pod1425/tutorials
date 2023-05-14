@@ -1,13 +1,16 @@
 package practice.p1;
 
+import practice.p2.Point;
+
 public class Circle extends Shape {
     protected double radius;
+    protected Point center;
 
-    public Circle(double radius, String color, boolean filled) {
+    public Circle(Point center, double radius, String color, boolean filled) {
         super("circle", color, filled);
         this.radius = radius;
+        this.center = center;
     }
-
 
     public double getRadius() {
         return radius;

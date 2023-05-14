@@ -23,8 +23,16 @@ public class Card {
         this.pinCode = pinCode;
     }
 
+    public int getPinCode() {
+        return pinCode;
+    }
+
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public double getBalance() {
+        return balance;
     }
 
     public String getNumber() {
@@ -43,7 +51,6 @@ public class Card {
     public String getExpirationdate() {
         return expirationdate;
     }
-
 
     public void deposit(double amount) {
         if (amount > 5000) {
@@ -64,7 +71,7 @@ public class Card {
         }
     }
 
-    public boolean pinCode() {
+   protected boolean pinCode() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter your PIN code: ");
         int userPinCode = scanner.nextInt();
