@@ -1,10 +1,12 @@
 package hw.bank.card;
 
+import hw.bank.Account;
+
 public class CreditCard extends Card {
     private double debt;
     private double limit;
 
-    public CreditCard(String number, int CVC2, double balance, String cardholderName, String expirationdate, int pinCode) {
+    public CreditCard(String number, int CVC2, double balance, Account cardholderName, String expirationdate, int pinCode) {
         super(number, CVC2, balance, cardholderName, expirationdate, pinCode);
         debt = 0;
         limit = 10000;
@@ -21,10 +23,6 @@ public class CreditCard extends Card {
         }
     }
 
-    public void setDebt(double debt) {
-        this.debt = debt;
-    }
-
     public double getDebt() {
         return debt;
     }
@@ -38,7 +36,6 @@ public class CreditCard extends Card {
             return;
         }
         this.limit = limit;
-
     }
 
     public void credit(double amount) {
@@ -47,6 +44,16 @@ public class CreditCard extends Card {
         }
         this.debt += amount;
         this.balance += amount;
+    }
+
+    @Override
+    public void send(double amount) {
+
+    }
+
+    @Override
+    public void receive(double amount) {
+
     }
 }
 

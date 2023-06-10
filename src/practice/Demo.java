@@ -5,7 +5,21 @@ import practice.p1.Rectangle;
 import practice.p1.Shape;
 import practice.p2.Point;
 
+import java.io.File;
+
+class SomeClass {
+    public int value;
+}
+
 public class Demo {
+    public static void main(String[] args) {
+        SomeClass obj1 = new SomeClass();
+        obj1.value = 5;
+        SomeClass obj2 = obj1;
+        obj2.value = 15;
+        System.out.println(obj1.value);
+        System.out.println(obj2.value);
+    }
 
     public static void testShapes() {
         Shape rect = new Rectangle(10, 15, "blue", false);
@@ -24,9 +38,17 @@ public class Demo {
         }
     }
 
-    public static void main(String[] args) {
-        Point p = new Point(1.0, 2.0, 3.0);
-        String text = p.toString();
-        System.out.println(text);
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
