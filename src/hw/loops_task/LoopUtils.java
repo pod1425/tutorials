@@ -2,7 +2,7 @@ package hw.loops_task;
 
 import java.util.Scanner;
 
-public class LoopUtils implements ILoopUtils {
+public class LoopUtils implements hw.loops_task.ILoopUtils {
     @Override
     public double askNumber(double min, double max) {
         double num;
@@ -10,7 +10,7 @@ public class LoopUtils implements ILoopUtils {
         while (true) {
             num = sc.nextDouble();
             if (num < min || num > max) {
-                System.out.println("Invalid Input;\n");
+                System.out.println("Invalid Input;");
             } else {
                 return num;
             }
@@ -29,8 +29,9 @@ public class LoopUtils implements ILoopUtils {
     @Override
     public double testMachineSpeed() {
         long start = System.nanoTime();
-        for (long i = 0; i < 1_000_000_000; i++) {}
+        for (long i = 0; i < 1000000000; i++) {
 
+        }
         long end = System.nanoTime();
         return (end - start) / 1000000.0;
     }
@@ -58,11 +59,18 @@ public class LoopUtils implements ILoopUtils {
     }
 
     public void printMultiplicationTable(int number) {
-
+        for (int i = 1; i <= 10; i++) {
+            int result = number * i;
+            System.out.println(number + " * " + i + " = " + result);
+        }
     }
+
 
     public void printPowersOf2(int amount) {
-        
+        int power = 1;
+        for (int i = 1; i <= amount; i++) {
+            System.out.print(power + " ");
+            power *= 2;
+        }
     }
-
 }

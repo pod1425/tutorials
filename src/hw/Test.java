@@ -10,7 +10,7 @@ public class Test {
         LoopUtils utils = new LoopUtils();
         //double num = utils.askNumber(0, 10);
         //System.out.println("Factorial: " + utils.factorial((short) num));
-        System.out.println(utils.testMachineSpeed());
+        utils.printMultiplicationTable(7);
 
 
 

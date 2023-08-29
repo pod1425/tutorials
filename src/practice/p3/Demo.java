@@ -1,6 +1,7 @@
 package practice.p3;
 
 import java.lang.reflect.Array;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
@@ -39,7 +40,7 @@ public class Demo {
         return fibonacciSequence;
     }
 
-    private static int sum(int[] arr) {
+    private static int sum(int... arr) {
         int result = 0;
         for (int i = 0; i < arr.length; i++) {
             result += arr[i];
@@ -66,15 +67,48 @@ public class Demo {
         return -1;
     }
 
+    private static void sort(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int index = i;
+            for (int j = i; j < arr.length; j++) {
+                if (arr[index] > arr[j]) {
+                    index = j;
+                }
+            }
+            if (index != i) {
+                int temp = arr[i];
+                arr[i] = arr[index];
+                arr[index] = temp;
+            }
+        }
+    }
+
     public static void main(String[] args) {
+        LocalDateTime now = LocalDateTime.now();
+
+        /*
         final int amount = 15;
         int[] fibonacciSequence = getFibonacciSequence(amount);
         System.out.println(Arrays.toString(fibonacciSequence));
         System.out.println(sum(fibonacciSequence));
+        */
+        //int[] arr = { 4, 8, 6, 69, 44, 8, 93, 7, 55 };
+        //System.out.println(sum(4, 8, 6, 69, 44, 8, 93, 7, 55));
+        //int index = find(arr, 8489489);
+        //System.out.println(arr[index] + ", index of it is " + index);
+        /*
+        Object[] arr = new Object[10];
+        arr[0] = new Scanner(System.in);
+        arr[1] = "Hello world!";
+        System.out.println(arr[1]);
+        arr[2] = ((Scanner)arr[0]).nextInt();
 
-        int[] arr = { 4, 8, 6, 69, 44, 8, 93, 7, 55 };
-        int index = find(arr, 8489489);
-        System.out.println(arr[index] + ", index of it is " + index);
+        System.out.println(arr[2]);
+*/
+        //int[] arr = { 4, 8, 6, 69, 44, 8, 93, 7, 55 };
+        //sort(arr);
+        //System.out.println(Arrays.toString(arr));
+        
     }
 
 
