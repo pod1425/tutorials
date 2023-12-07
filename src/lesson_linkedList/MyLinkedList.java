@@ -61,6 +61,11 @@ public class MyLinkedList<T> implements Iterable<T>{
         if (first == null) {
             return false;
         }
+        if (first == last) {
+            first = null;
+            last = null;
+            return true;
+        }
         Node<T> it = first;
         while (it.next.hasNext()) {
             it = it.next;
