@@ -37,6 +37,10 @@ public class MyArrayList<T> {
         elements[index] = val;
     }
 
+    public void replace(T oldVal, T newVal) {
+        set(indexOf(oldVal), newVal);
+    }
+
     public int indexOf(T val) {
         for (int i = 0; i < size; i++) {
             if (elements[i].equals(val)) {
@@ -52,6 +56,7 @@ public class MyArrayList<T> {
                 return i;
             }
         }
+        
         return -1;
     }
 
@@ -122,6 +127,10 @@ public class MyArrayList<T> {
         }
         size--;
         return true;
+    }
+
+    public boolean removeLast() {
+        return remove(size - 1);
     }
 
     @Override
